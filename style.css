@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+h1 {
+  color: #612222;
+  text-align: center;
+  margin: 0;
+  font-size: 50px;
+  font-family: "Dancing Script", cursive;
+  /* Increased font size */
+}
+
+.start-btn {
+  background-color: #4caf50;
+  /* Green background by default */
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  /* pointer-events: none; */
+}
+
+/* Red background when active */
+.start-btn.listening {
+  background-color: #f44336;
+}
+
+#drawGif {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background: #8080808a;
+  padding: 17px;
+  border-radius: 50%;
+}
+
+.examp {
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+}
+
+ul {
+  list-style: auto;
+  font-size: 17px;
+  font-family: "Raleway", sans-serif;
+  text-transform: capitalize;
+}
+
+.commandSec {
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
+  width: 100%;
+  flex-direction: column;
+}
+
+.mainSec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#commandText {
+  display: none;
+}
+
+footer {
+  margin-top: 5px;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+
+#start-btn {
+  display: none;
+}
+
+#apikey {
+  border-radius: 15px;
+  outline: none;
+  border: 1px solid silver;
+  padding: 5px 10px;
+}
+.ciziliyorP {
+  text-align: center;
+  font-family: "Ralewa", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px #ffffffde;
+}
+#divPass {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+footer {
+  position: fixed;
+  bottom: 15px;
+}
+
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+  .start-btn {
+    padding: 10px 22px;
+    font-size: 15px;
+    /* Larger button on mobile */
+    /* Larger font size on mobile */
+  }
+
+  .examp {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 45px;
+    /* Larger font size for the title on mobile */
+  }
+
+  .mainSec {
+    width: 100%;
+  }
+}
