@@ -9,26 +9,30 @@ Bu proje, kullanıcıların birbirleriyle konuşarak birlikte çizim yapabilmele
 ## Proje Nasil Kendi Bilgisayarınızda Çalıştırılır?
 
 Proje, Python programlama dili kullanılarak geliştirilmiştir.
-1-Projenin çalıştırılabilmesi için bilgisayarınızda Python yüklü olmalıdır. Python yüklü değilse, [Python'un resmi web sitesinden](https://www.python.org/downloads/) indirip yükleyebilirsiniz.
-2-Python yüklendikten sonra, projenin bulunduğu dizine terminal üzerinden gidin.
-3-Terminal üzerinden `pip install --user -r requirements.txt` komutunu çalıştırarak projenin içinde kullandığı paketleri yükleyin. Projenin içinde kullanılan paketlerin listesi `requirements.txt` dosyasında bulunmaktadır.
-4-Paketler yüklendikten sonra, terminal üzerinden `python main.py` komutunu çalıştırarak projeyi başlatabilirsiniz. pytohn yazdıktan sonra hangi dosyanın çalıştırılacağını belirtiyoruz. Bizim ana dosyamız "main.py" olduğu için main.py yazdık.
+
+1 - Projenin çalıştırılabilmesi için bilgisayarınızda Python yüklü olmalıdır. Python yüklü değilse, [Python'un resmi web sitesinden](https://www.python.org/downloads/) indirip yükleyebilirsiniz.
+
+2 - Python yüklendikten sonra, projenin bulunduğu dizine terminal üzerinden gidin.
+
+3 - Terminal üzerinden `pip install --user -r requirements.txt` komutunu çalıştırarak projenin içinde kullandığı paketleri yükleyin. Projenin içinde kullanılan paketlerin listesi `requirements.txt` dosyasında bulunmaktadır.
+
+4 - Paketler yüklendikten sonra, terminal üzerinden `python main.py` komutunu çalıştırarak projeyi başlatabilirsiniz. pytohn yazdıktan sonra hangi dosyanın çalıştırılacağını belirtiyoruz. Bizim ana dosyamız "main.py" olduğu için main.py yazdık.
 
 ## Proje Çalışma Mantığı
 
-1- "/" dizinine GET isteği atıldığında, uygulama kullanıcıya `index.html` dosyasını döner. Bu dosya, kullanıcıya uygulamanın arayüzünü sunar. Bu arayüzde kullanıcılar, konuşma yaparak çizilmesini istediğimiz resmi anlatır.
+1 - "/" dizinine GET isteği atıldığında, uygulama kullanıcıya `index.html` dosyasını döner. Bu dosya, kullanıcıya uygulamanın arayüzünü sunar. Bu arayüzde kullanıcılar, konuşma yaparak çizilmesini istediğimiz resmi anlatır.
 
-2- Konuşmaya başlamadan önce "Dinlemeye başla" yazısı olan butona basarak konuşmaya başlayabilirler. Konuşma bittiğinde ve ya "Dinliyor..." yazısı olan butona basarak konuşmayı bitirebilirler.
+2 - Konuşmaya başlamadan önce "Dinlemeye başla" yazısı olan butona basarak konuşmaya başlayabilirler. Konuşma bittiğinde ve ya "Dinliyor..." yazısı olan butona basarak konuşmayı bitirebilirler.
 
-3- Konuşmayı tarayıcıların SpeechSynthesisUtterance API'si ile dinleyip sonrasında yazıya çeviririz.
+3 - Konuşmayı tarayıcıların SpeechSynthesisUtterance API'si ile dinleyip sonrasında yazıya çeviririz.
 
-4- Yazıya çevrilen konuşmayı index.html içindeki "ciz" fonksiyonuna göndeririz. Bu fonksiyon, metni alır ve "/draw" dizinine POST isteği atarak metni ve resim çizilen kısmı(eğer ki ilk defa yapılmış ise boş , yoksa daha önceki fotoğrafların eklendiği son halini ) isteği BODY'sine ekleyip istek atılır.
+4 - Yazıya çevrilen konuşmayı index.html içindeki "ciz" fonksiyonuna göndeririz. Bu fonksiyon, metni alır ve "/draw" dizinine POST isteği atarak metni ve resim çizilen kısmı(eğer ki ilk defa yapılmış ise boş , yoksa daha önceki fotoğrafların eklendiği son halini ) isteği BODY'sine ekleyip istek atılır.
 
-5- "/draw" dizinine POST isteği atıldığında, BODY'e konulan veriler alınır ve "main.py" içindeki "get_image_from_prompt" fonksiyonuna dinlenin metnin yazıya döndürülmüş hali verilir. Bu fonksiyon, metni alır ve OpenAI istemcisini kullanarak DALL-E modelini çağırıyoruz ve resim üretiyoruz. Üretilen resmi boyutlandırıyoruz ve döndürüyoruz.
+5 - "/draw" dizinine POST isteği atıldığında, BODY'e konulan veriler alınır ve "main.py" içindeki "get_image_from_prompt" fonksiyonuna dinlenin metnin yazıya döndürülmüş hali verilir. Bu fonksiyon, metni alır ve OpenAI istemcisini kullanarak DALL-E modelini çağırıyoruz ve resim üretiyoruz. Üretilen resmi boyutlandırıyoruz ve döndürüyoruz.
 
-6- Oluşturulan resim index.html'e döner.
+6 - Oluşturulan resim index.html'e döner.
 
-7- "ciz" fonksiyonu, dönen resmi alır ve eğer ilk defa resim çiziliyor ise resmin konulacağı alan temizlenir ve fabric aracılığı ile resim çizilir. Eğer daha önce resim çizilmiş ise, yeni resim eski resmin üzerine çizilir.
+7 - "ciz" fonksiyonu, dönen resmi alır ve eğer ilk defa resim çiziliyor ise resmin konulacağı alan temizlenir ve fabric aracılığı ile resim çizilir. Eğer daha önce resim çizilmiş ise, yeni resim eski resmin üzerine çizilir.
 
 ## Kelimelerin Anlamı
 
