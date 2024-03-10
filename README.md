@@ -1,6 +1,6 @@
 # Talk And Draw Projesi
 ## Proje URL
-https://benefeoral.github.io/talkanddraw/
+[talkanddraw.online](https://talkanddraw.online/)
 
 ## Proje Tanımı
 
