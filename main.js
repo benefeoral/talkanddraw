@@ -1,13 +1,13 @@
 let apiToken = "";
 // Gerekli HTML elementlerini seçme
-const anahtariOnaylaButonu = document.getElementById("anahtariOnaylaButonu");
-const apiKeyInput = document.getElementById("apikey");
-const komutYazisi = document.getElementById("command");
-const baslaButonu = document.getElementById("start-btn");
-const cizmeAnimasyonu = document.getElementById("drawGif");
-const komutListesi = document.getElementById("commandText");
-const sonucImage = document.getElementById("sonucImage");
-
+const anahtariOnaylaButonu = document.querySelector("#anahtariOnaylaButonu");
+const apiKeyInput = document.querySelector("#apikey");
+const sifreDiv = document.querySelector("#divPass");
+const komutYazisi = document.querySelector("#command");
+const baslaButonu = document.querySelector("#start-btn");
+const cizmeAnimasyonu = document.querySelector("#drawGif");
+const komutListesi = document.querySelector("#commandText");
+const sonucImage = document.querySelector("#sonucImage");
 apiKeyInput.value = localStorage.getItem("apikey") || "";
 // Başlangıç değerleri ve değişken tanımları
 let komutDinleniyor = false; // Konuşma tanıma dinleniyor mu?
@@ -39,7 +39,7 @@ function anahtariOnayla() {
   apiToken = girilenSifre;
   baslaButonu.style.display = "block";
   baslaButonu.style.pointerEvents = "inherit";
-  document.getElementById("divPass").style.display = "none";
+  sifreDiv.style.display = "none";
   localStorage.setItem("apikey", apiToken);
 }
 
