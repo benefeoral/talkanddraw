@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,29 +15,25 @@
         "Deniz kenarındaki bir lunaparkta eğlenen zürafalar"
       </p>
       <div class="commandSec" id="commandText">
-        <p class="examp" style="text-align: left">Komutlar;</p>
-        <ul id="command" style="margin-top: 0"></ul>
+        <p class="examp" id="commandHeader">Komutlar;</p>
+        <ul id="command"></ul>
       </div>
-      <div id="divPass" style="margin: 12px">
-        <label class="examp" style="margin-right: 5px">Apikey Giriniz</label>
+      <div id="divPass">
+        <label class="examp" id="apikeyLabel">Apikey Giriniz</label>
         <input id="apikey" type="text" />
         <button id="anahtariOnaylaButonu" class="start-btn">Onayla</button>
       </div>
       <button id="start-btn" class="start-btn">Dinlemeye Başla</button>
-      <div style="position: relative">
+      <div class="animationWrapper">
         <div id="drawGif">
           <p class="ciziliyorP">Çiziliyor...</p>
           <img src="./draw-animation.gif" alt="Drawing Gif" width="150" />
         </div>
-        <img
-          src=""
-          style="height: 70vh; max-width: 100vw; visibility: hidden"
-          id="sonucImage"
-        />
+        <img src="" id="sonucImage" />
       </div>
     </div>
     <footer>
-      <p style="font-size: 13px">
+      <p class="footerText">
         © Copyright 2024. All Rights Reserved by İstek Koleji
       </p>
     </footer>
